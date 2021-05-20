@@ -2,31 +2,31 @@
 
 
 
-//Incluindo as Bibliotecas da Placa NodeMCU ESP8266 para estabelecer conexão via WiFi
+//Incluindo as Bibliotecas do NodeMCU ESP8266 para iniciar conexão via WiFi
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-//Definindo as variáveis e os pinos e entradas correspondentes de cada componente
+//Definir as variáveis, os pinos e as entradas de cada componente
 #define DEBUG
 #define pino_sinal_analogico A0
 
-#define pino_led_vermelho 13 //5
-#define pino_led_verde 12 //7
-#define pino_bomba 14 //8 14
+#define pino_led_vermelho 13 // 5
+#define pino_led_verde 12 // 7
+#define pino_bomba 14 //8-14
 
 //Variáveis
 int valor_analogico;
 String strMSG = "0";
 char mensagem[30];
 
-const char* ssid = "Assis2g";             //SSID da rede WIFI
-const char* password =  "210388as";    //senha da rede wifi
+const char* ssid = "---";             // rede Wi-Fi
+const char* password =  "----";    //senha  Wi-Fi
 //Informações da Instância do broker MQTT
 const char* mqttServer = "broker.mqtt-dashboard.com";   //server
-const char* mqttUser = "assis";              //user
-const char* mqttPassword = "210388";      //password
+const char* mqttUser = "---";              //user
+const char* mqttPassword = "---";      //password
 const int mqttPort = 1883;                     //port
-const char* mqttTopicSub = "jardim/bomba";      //tópico que será assinado no Broker
+const char* mqttTopicSub = "solo/bomba";      //tópico que será assinado no Broker
 
 WiFiClient espClient;
 PubSubClient client(espClient);
